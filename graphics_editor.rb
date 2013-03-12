@@ -9,9 +9,9 @@ require './Utils/utilities'
 class GraphicsEditor
 
 
-  include GraphicsCommandModule
+
   include GraphicsControllerModule
-  include Utilities
+
 
 
   attr_accessor :current_command,  :prompt, :commander

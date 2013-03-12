@@ -34,19 +34,19 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="graphics_editor.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="graphics_editor.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graphics_editor.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="3" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0">
+            <state line="13" column="2" selection-start="209" selection-end="209" vertical-scroll-proportion="0.2196819">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graphics_command_spec.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="graphics_command_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/graphics_command_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="18" selection-start="605" selection-end="605" vertical-scroll-proportion="0.47316104">
+            <state line="28" column="18" selection-start="605" selection-end="605" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -126,11 +126,11 @@
         <option value="$PROJECT_DIR$/Tests/RSpec/grid_object_spec.rb" />
         <option value="$PROJECT_DIR$/spec/grid_object_spec.rb" />
         <option value="$PROJECT_DIR$/GraphicsController/graphics_controller_module.rb" />
-        <option value="$PROJECT_DIR$/graphics_editor.rb" />
         <option value="$PROJECT_DIR$/Utils/utilities.rb" />
         <option value="$PROJECT_DIR$/GraphicsController/graphics_command_module.rb" />
         <option value="$PROJECT_DIR$/spec/graphics_command_spec.rb" />
         <option value="$PROJECT_DIR$/Model/grid_object.rb" />
+        <option value="$PROJECT_DIR$/graphics_editor.rb" />
       </list>
     </option>
   </component>
@@ -490,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graphics_editor.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="3" selection-start="542" selection-end="542" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GraphicsController/graphics_command_module.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="214" column="64" selection-start="3877" selection-end="3877" vertical-scroll-proportion="0.0">
@@ -534,7 +527,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/graphics_command_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="18" selection-start="605" selection-end="605" vertical-scroll-proportion="0.47316104">
+        <state line="28" column="18" selection-start="605" selection-end="605" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graphics_editor.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="2" selection-start="209" selection-end="209" vertical-scroll-proportion="0.2196819">
           <folding />
         </state>
       </provider>
