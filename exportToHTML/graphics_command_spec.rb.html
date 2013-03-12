@@ -1,0 +1,145 @@
+<html>
+<head>
+<title>graphics_command_spec.rb</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: rgb(0,0,0); font-weight: normal; font-style: normal; }
+.s0 { color: rgb(204,204,204); }
+.s1 { color: rgb(255,255,255); }
+.s2 { color: rgb(58,217,0); }
+.s3 { color: rgb(255,98,140); }
+.s4 { color: rgb(255,157,0); }
+.s5 { color: rgb(225,239,255); }
+</style>
+</head>
+<BODY BGCOLOR="#2240">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#C0C0C0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+graphics_command_spec.rb</FONT>
+</center></TD></TR></TABLE>
+<pre>
+
+<a name="l1"><span class="s0">require </span><span class="s2">&quot;rspec&quot;</span><span class="s1"> 
+<a name="l2"></span><span class="s0">require </span><span class="s2">'./GraphicsController/graphics_command_module'</span><span class="s1"> 
+<a name="l3"> 
+<a name="l4"> 
+<a name="l5"></span><span class="s0">describe </span><span class="s3">GraphicsCommandModule </span><span class="s4">do</span><span class="s1"> 
+<a name="l6"> 
+<a name="l7">  </span><span class="s0">describe </span><span class="s2">&quot;#GraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l8"> 
+<a name="l9">    </span><span class="s0">context </span><span class="s2">&quot; in this example there are 8 subclasses of GraphicsCommand&quot;  </span><span class="s4">do</span><span class="s1"> 
+<a name="l10"> 
+<a name="l11">      </span><span class="s0">before</span><span class="s5">(</span><span class="s3">:each</span><span class="s5">) </span><span class="s4">do</span><span class="s1"> 
+<a name="l12"> 
+<a name="l13">        </span><span class="s0">@commander </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">GraphicsCommand</span><span class="s1"> 
+<a name="l14">        </span><span class="s0">@commands </span><span class="s4">= </span><span class="s0">@commander</span><span class="s5">.</span><span class="s0">commands</span><span class="s1"> 
+<a name="l15"> 
+<a name="l16">      </span><span class="s4">end</span><span class="s1"> 
+<a name="l17"> 
+<a name="l18">      </span><span class="s0">it </span><span class="s2">'should return an array from the commands method' </span><span class="s4">do</span><span class="s1"> 
+<a name="l19"> 
+<a name="l20">         </span><span class="s0">@commands</span><span class="s5">.</span><span class="s0">should be_an_instance_of</span><span class="s5">(</span><span class="s3">Array</span><span class="s5">)</span><span class="s1"> 
+<a name="l21">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l22"> 
+<a name="l23">      </span><span class="s0">it </span><span class="s2">&quot; should return an array of all subclasses of GraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l24"> 
+<a name="l25"> 
+<a name="l26">         </span><span class="s0">@commands</span><span class="s5">.</span><span class="s0">length</span><span class="s5">.</span><span class="s0">should </span><span class="s4">== </span><span class="s3">8</span><span class="s1"> 
+<a name="l27"> 
+<a name="l28">      </span><span class="s4">end</span><span class="s1"> 
+<a name="l29"> 
+<a name="l30">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l31"> 
+<a name="l32">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l33"> 
+<a name="l34">  </span><span class="s0">describe </span><span class="s2">&quot;#CreateGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l35"> 
+<a name="l36">      </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'I M N' where 'M' and 'N' are integers&quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l37">        </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;I 77 80&quot;</span><span class="s1"> 
+<a name="l38">        </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">CreateGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l39">        </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l40"> 
+<a name="l41">      </span><span class="s4">end</span><span class="s1"> 
+<a name="l42"> 
+<a name="l43">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l44"> 
+<a name="l45">  </span><span class="s0">describe </span><span class="s2">&quot;#ClearGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l46"> 
+<a name="l47">    </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'C'&quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l48">      </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;C&quot;</span><span class="s1"> 
+<a name="l49">      </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">ClearGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l50">      </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l51"> 
+<a name="l52">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l53"> 
+<a name="l54">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l55"> 
+<a name="l56">  </span><span class="s0">describe </span><span class="s2">&quot;#ColorPixelGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l57"> 
+<a name="l58">    </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'L M N C' where 'M' and 'N' are integers&quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l59">      </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;L 5 5 P&quot;</span><span class="s1"> 
+<a name="l60">      </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">ColorPixelGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l61">      </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l62"> 
+<a name="l63">     </span><span class="s4">end</span><span class="s1"> 
+<a name="l64"> 
+<a name="l65">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l66"> 
+<a name="l67">  </span><span class="s0">describe </span><span class="s2">&quot;#ColorColumnGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l68"> 
+<a name="l69">    </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'V M N P C' where 'M' , 'N', 'P' are integers&quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l70">      </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;V 5 5 6 P&quot;</span><span class="s1"> 
+<a name="l71">      </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">ColorColumnGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l72">      </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l73"> 
+<a name="l74">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l75"> 
+<a name="l76">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l77"> 
+<a name="l78">  </span><span class="s0">describe </span><span class="s2">&quot;#ColorRowGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l79"> 
+<a name="l80">    </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'H M N P C' where 'M' , 'N', 'P' are integers&quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l81">      </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;H 5 5 6 P&quot;</span><span class="s1"> 
+<a name="l82">      </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">ColorRowGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l83">      </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l84"> 
+<a name="l85">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l86"> 
+<a name="l87">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l88"> 
+<a name="l89">  </span><span class="s0">describe </span><span class="s2">&quot;#ColorRegionGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l90"> 
+<a name="l91">    </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'F M N C' where 'M' and 'N' are integers&quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l92">      </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;F 5 5 P&quot;</span><span class="s1"> 
+<a name="l93">      </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">ColorRegionGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l94">      </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l95"> 
+<a name="l96">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l97"> 
+<a name="l98">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l99"> 
+<a name="l100">  </span><span class="s0">describe </span><span class="s2">&quot;#DrawGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l101"> 
+<a name="l102">    </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'S' &quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l103">      </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;S&quot;</span><span class="s1"> 
+<a name="l104">      </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">DrawGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l105">      </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l106"> 
+<a name="l107">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l108"> 
+<a name="l109">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l110"> 
+<a name="l111">  </span><span class="s0">describe </span><span class="s2">&quot;#QuitGraphicsCommand&quot; </span><span class="s4">do</span><span class="s1"> 
+<a name="l112"> 
+<a name="l113">    </span><span class="s0">it </span><span class="s2">&quot; should have a validate command which correctly validates the command 'X' &quot;   </span><span class="s4">do</span><span class="s1"> 
+<a name="l114">      </span><span class="s0">test </span><span class="s4">= </span><span class="s2">&quot;X&quot;</span><span class="s1"> 
+<a name="l115">      </span><span class="s0">@create </span><span class="s4">= </span><span class="s3">GraphicsCommandModule</span><span class="s5">::</span><span class="s3">QuitGraphicsCommand</span><span class="s5">.</span><span class="s0">new</span><span class="s1"> 
+<a name="l116">      </span><span class="s0">@create</span><span class="s5">.</span><span class="s0">validate</span><span class="s5">(</span><span class="s0">test</span><span class="s5">).</span><span class="s0">should </span><span class="s4">== true</span><span class="s1"> 
+<a name="l117"> 
+<a name="l118">    </span><span class="s4">end</span><span class="s1"> 
+<a name="l119"> 
+<a name="l120">  </span><span class="s4">end</span><span class="s1"> 
+<a name="l121"></span><span class="s4">end</span></pre>
+</body>
+</html>
